@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;    // Movement speed
+    public float moveSpeed = 12f;    // Movement speed
     public float jumpForce = 10f;   // Jump force
     private Rigidbody rb;
     private Camera mainCamera;
@@ -50,9 +50,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z); // Apply jump force directly to y-velocity
         }
 
-        if (!IsVisibleToCamera())
-
-            GameOver();
+        CheckOutOfBounds();
     }
         
         private void GameOver()
@@ -62,6 +60,14 @@ public class PlayerController : MonoBehaviour
             gameOverCanvas.gameObject.SetActive(true);
             // Disable player movement here
             this.enabled = false;
+    }
+
+        private void CheckOutOfBounds()
+    {
+        if (!IsVisibleToCamera() && !isGameOver)
+        {
+            GameOver();
+        }
     }
 
 }

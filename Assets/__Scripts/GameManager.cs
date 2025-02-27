@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
+
 {
+    public CameraScroll cameraScroll;
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        cameraScroll.ResetScroll();
     }
 
     public void LoadMainMenu()
