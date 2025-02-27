@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;   // Jump force
     private Rigidbody rb;
     private Camera mainCamera;
+    public Canvas gameOverCanvas; // Reference to the Game Over Canvas
     private bool isGameOver = false;
+    
     private bool IsVisibleToCamera()
     {
         Vector3 viewportPosition = mainCamera.WorldToViewportPoint(transform.position);
@@ -49,19 +51,17 @@ public class PlayerController : MonoBehaviour
         }
 
         if (!IsVisibleToCamera())
-        {
+
             GameOver();
-
-            private void GameOver()
-    {
-        isGameOver = true;
-        Debug.Log("Game Over! Player out of camera view.");
-        // Add any additional game over logic here, such as:
-        // - Stopping the player's movement
-        // - Displaying a game over UI
-        // - Restarting the level
     }
-
-
+        
+        private void GameOver()
+    {
+            isGameOver = true;
+            Debug.Log("Game Over! Player out of camera view.");
+            gameOverCanvas.gameObject.SetActive(true);
+            // Disable player movement here
+            this.enabled = false;
+    }
 
 }
