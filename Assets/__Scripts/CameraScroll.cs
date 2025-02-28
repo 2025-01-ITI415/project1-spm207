@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraScroll : MonoBehaviour
 {
-    public float maxScrollSpeed = 3f;     // Maximum scroll speed
-    public float accelerationTime = 60f;    // Time (in seconds) to reach maximum speed
+    public float maxScrollSpeed = 10f;     // Maximum scroll speed
+    public float accelerationTime = 30f;    // Time (in seconds) to reach maximum speed
     private float currentScrollSpeed = 0f; // Current scroll speed
     private float startTime;                // Time when scrolling started
 

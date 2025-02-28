@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); // Get the Rigidbody component
-        mainCamera = Camera.main; // Get the main camera
+        rb = GetComponent<Rigidbody>();
+        mainCamera = Camera.main;
 
     }
 
@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
         private void GameOver()
     {
             isGameOver = true;
-            Debug.Log("Game Over! Player out of camera view.");
             gameOverCanvas.gameObject.SetActive(true);
             // Disable player movement here
             this.enabled = false;

@@ -13,15 +13,15 @@ public class GameManager : MonoBehaviour
         cameraScroll.ResetScroll();
     }
 
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu"); // Replace with your main menu scene name
-    }
+    //public void LoadMainMenu()
+   // {
+   //     SceneManager.LoadScene("MainMenu"); // Replace with your main menu scene name
+   // }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+   // public void QuitGame()
+   // {
+   //     Application.Quit();
+   // }
     // Start is called before the first frame update
     void Start()
     {
